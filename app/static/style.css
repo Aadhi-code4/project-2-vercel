@@ -1,0 +1,212 @@
+body {
+    font-family: Arial, sans-serif;
+}
+.card {
+    border-radius: 10px;
+}
+body.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+.dark-mode .card {
+    background-color: #1e1e2e;
+    color: #bbdefb;
+    border: 2px solid #03a9f4;
+    border-radius: 12px;
+    transition: transform 0.3s ease-in-out;
+}
+.dark-mode .card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 0px 15px #03a9f4;
+}
+.dark-mode .btn-success {
+    background-color: #0277bd;
+    border: none;
+}
+.dark-mode .btn-success:hover {
+    background-color: #01579b;
+}
+.dark-mode .form-control {
+    background-color: #263238;
+    color: #e0e0e0;
+    border: 1px solid #37474f;
+}
+.dark-mode .form-control:focus {
+    background-color: #37474f;
+    color: #ffffff;
+    border-color: #03a9f4;
+    box-shadow: 0 0 8px #03a9f4;
+}
+.dark-mode pre {
+    background-color: #263238;
+    color: #bbdefb;
+}
+
+/* Light Mode Styles */
+body.light-mode {
+    background-color: #f8f9fa;
+    color: #212529;
+}
+.light-mode .card {
+    background-color: #ffffff;
+    color: #212529;
+    border: 2px solid #007bff;
+    border-radius: 12px;
+    transition: transform 0.3s ease-in-out;
+}
+.light-mode .card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 0px 15px #007bff;
+}
+.light-mode .btn-success {
+    background-color: #28a745;
+    border: none;
+}
+.light-mode .btn-success:hover {
+    background-color: #218838;
+}
+.light-mode .form-control {
+    background-color: #ffffff;
+    color: #212529;
+    border: 1px solid #ced4da;
+}
+.light-mode .form-control:focus {
+    background-color: #e9ecef;
+    color: #212529;
+    border-color: #007bff;
+    box-shadow: 0 0 8px #007bff;
+}
+.light-mode pre {
+    background-color: #e9ecef;
+    color: #212529;
+}
+/* Mode Toggle Button */
+.mode-toggle {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+.light-mode .mode-toggle {
+    background-color: #007bff;
+    color: white;
+}
+.light-mode .mode-toggle:hover {
+    background-color: #0056b3;
+    box-shadow: 0px 0px 10px rgba(0, 91, 187, 0.8);
+}
+.dark-mode .mode-toggle {
+    background-color: #03a9f4;
+    color: black;
+}
+.dark-mode .mode-toggle:hover {
+    background-color: #0288d1;
+    box-shadow: 0px 0px 10px rgba(2, 136, 209, 0.8);
+}
+#loading-spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.response-tab {
+    display: none;
+}
+.response-tab.active {
+    display: block;
+}
+.response-tab {
+    display: block !important;  /* Ensure it's visible */
+}
+/* Scrollable text area - Scrollbar appears only when needed */
+textarea {
+    max-height: 150px;
+    overflow-y: auto;
+    overflow-x: auto;
+    resize: vertical; /* Allows manual resizing */
+}
+
+
+
+/* Ensure both response tabs use the same height */
+.response-tab {
+    height: 100%; /* Make sure both tabs take full height */
+    overflow-y: auto;
+    overflow-x: auto;
+}
+
+/* Adjust pre tag inside response box */
+#response-box pre {
+    height: 100%;
+    margin: 0; /* Remove extra margin */
+    padding: 10px;
+    overflow-y: auto;
+    overflow-x: auto;
+}
+
+/* Custom Scrollbar - Light Mode */
+.light-mode textarea,
+.light-mode #response-box {
+    scrollbar-width: thin; /* For Firefox */
+    scrollbar-color: #007bff #e9ecef; /* Blue thumb, light gray track */
+}
+
+/* WebKit Scrollbar (Chrome, Edge, Safari) */
+.light-mode textarea::-webkit-scrollbar,
+.light-mode #response-box::-webkit-scrollbar {
+    width: 8px;
+}
+.light-mode textarea::-webkit-scrollbar-track,
+.light-mode #response-box::-webkit-scrollbar-track {
+    background: #e9ecef; /* Light gray track */
+    border-radius: 10px;
+}
+.light-mode textarea::-webkit-scrollbar-thumb,
+.light-mode #response-box::-webkit-scrollbar-thumb {
+    background: #007bff; /* Blue thumb */
+    border-radius: 10px;
+}
+.light-mode textarea::-webkit-scrollbar-thumb:hover,
+.light-mode #response-box::-webkit-scrollbar-thumb:hover {
+    background: #0056b3; /* Darker blue on hover */
+}
+
+/* Custom Scrollbar - Dark Mode */
+.dark-mode textarea,
+.dark-mode #response-box {
+    scrollbar-width: thin;
+    scrollbar-color: #03a9f4 #263238; /* Cyan thumb, dark gray track */
+}
+
+/* WebKit Scrollbar */
+/* Dark Mode Scrollbar Fix */
+.dark-mode textarea,
+.dark-mode #response-box {
+    scrollbar-width: thin !important;
+    scrollbar-color: #03a9f4 #263238 !important;
+}
+
+.dark-mode textarea::-webkit-scrollbar,
+.dark-mode #response-box::-webkit-scrollbar {
+    width: 8px !important;
+}
+
+.dark-mode textarea::-webkit-scrollbar-track,
+.dark-mode #response-box::-webkit-scrollbar-track {
+    background: #263238 !important;
+    border-radius: 10px !important;
+}
+
+.dark-mode textarea::-webkit-scrollbar-thumb,
+.dark-mode #response-box::-webkit-scrollbar-thumb {
+    background: #03a9f4 !important;
+    border-radius: 10px !important;
+}
+
+.dark-mode textarea::-webkit-scrollbar-thumb:hover,
+.dark-mode #response-box::-webkit-scrollbar-thumb:hover {
+    background: #0288d1 !important;
+}
+
